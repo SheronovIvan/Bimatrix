@@ -131,7 +131,7 @@ def solve_game():
         p_s = beta / D if D != 0 else None
         q_s = alpha / C if C != 0 else None
 
-    '''
+    
     lines_q = []
     if 0 <= q_s <= 1:
         lines_q.append(((0, q_s), (0, 1)))  
@@ -149,10 +149,10 @@ def solve_game():
         lines_p.append(((p_s, 1), (0, 1)))   
 
     for start, end in lines_q:
-        ax.plot([start[0], end[0]], [start[1], end[1]], 'g-', linewidth=2)
+        ax.plot([start[0], end[0]], [start[1], end[1]], 'green', linewidth=2)
 
     for start, end in lines_p:
-        ax.plot([start[0], end[0]], [start[1], end[1]], 'p-', linewidth=2)
+        ax.plot([start[0], end[0]], [start[1], end[1]], 'blue', linewidth=2)
     # Линии лучших ответов
 
     '''
@@ -167,7 +167,7 @@ def solve_game():
         [p < p_s, p > p_s], 
         [1, 0, 0.5]) if 'p_s' in locals() else np.zeros(300)
     ax.plot(p, q_br2, 'r-', lw=2)
-
+    '''
     # Отображение точек равновесия
     for (i,j) in nash_points:
         ax.plot(1-i, 1-j, 'o', markersize=12, markerfacecolor='lime', 
